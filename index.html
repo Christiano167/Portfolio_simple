@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Chriss</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: "class" };
+  </script>
+  <style>
+  .reveal {
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body class="bg-white text-gray-900 transition-colors duration-300 dark:bg-slate-900 dark:text-slate-100">
+
+  <!-- Progress bar --> 
+  <div id="progress" class="fixed left-0 top-0 z-20 h-1 w-0 bg-blue-600 dark:bg-blue-400"></div>
+
+  <!-- Back to top -->
+  <button id="to-top" aria-label="Kembali ke atas"
+  class="pointer-events-none fixed bottom-6 right-6 z-20 translate-y-4 rounded-full bg-blue-600 px-4 py-3 text-white opacity-0 shadow-lg transition duration-300 hover:bg-blue-700">
+  ↑
+  </button>  
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-10 bg-gray-100/90 backdrop-blur dark:bg-slate-800/90">
+    <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
+      <a href="#" class="text-xl font-bold text-blue-600 dark:text-blue-400">Chriss</a>
+
+      <nav class="flex items-center gap-4">
+        <ul id="menu"
+            class="absolute left-0 top-full hidden w-full flex-col gap-4 bg-gray-100 p-4 dark:bg-slate-800
+                   md:static md:flex md:w-auto md:flex-row md:gap-6 md:bg-transparent md:p-0 md:dark:bg-transparent">
+          <li><a href="#about" class="transition hover:text-blue-600 dark:hover:text-blue-400">About</a></li>
+          <li><a href="#projects" class="transition hover:text-blue-600 dark:hover:text-blue-400">Projects</a></li>
+          <li><a href="#contact" class="transition hover:text-blue-600 dark:hover:text-blue-400">Contact</a></li>
+        </ul>
+
+        <button id="theme-btn" aria-label="Ganti tema"
+        class="rounded-full p-2 text-gray-700 transition hover:bg-gray-200 dark:text-slate-200 dark:hover:bg-slate-700">
+  <!-- Ikon bulan: tampil di mode terang -->
+  <svg class="h-5 w-5 dark:hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
+       viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+  </svg>
+
+  <!-- Ikon matahari: tampil di mode gelap -->
+  <svg class="hidden h-5 w-5 dark:block" xmlns="http://www.w3.org/2000/svg" fill="none"
+       viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="4" />
+    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+  </svg>
+</button>
+        <button id="menu-btn" class="rounded p-2 text-2xl md:hidden" aria-label="Buka menu">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-5xl px-4">
+
+    <!-- ABOUT -->
+    <section id="about" class="py-16">
+      <h1 class="reveal mb-2 text-3xl font-bold md:text-5xl">Halo, saya Chriss</h1>
+      <p class="reveal text-gray-500 dark:text-slate-400">Calon developer yang suka membangun aplikasi web.</p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-16">
+      <h2 class="reveal mb-6 text-2xl font-semibold">Projects</h2>
+      <div class="flex flex-col gap-4 md:flex-row">
+        <article class="reveal flex-1 rounded-lg bg-gray-100 p-6 transition duration-300 hover:-translate-y-1 hover:shadow-lg dark:bg-slate-800">
+          <h3 class="mb-2 font-semibold">Project 1</h3>
+          <p class="text-gray-500 dark:text-slate-400">Deskripsi singkat.</p>
+        </article>
+        <article class="reveal flex-1 rounded-lg bg-gray-100 p-6 transition duration-300 hover:-translate-y-1 hover:shadow-lg dark:bg-slate-800">
+          <h3 class="mb-2 font-semibold">Project 2</h3>
+          <p class="text-gray-500 dark:text-slate-400">Deskripsi singkat.</p>
+        </article>
+        <article class="reveal flex-1 rounded-lg bg-gray-100 p-6 transition duration-300 hover:-translate-y-1 hover:shadow-lg dark:bg-slate-800">
+          <h3 class="mb-2 font-semibold">Project 3</h3>
+          <p class="text-gray-500 dark:text-slate-400">Deskripsi singkat.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-16">
+      <h2 class="mb-6 text-2xl font-semibold">Contact</h2>
+      <form class="reveal flex max-w-md flex-col gap-2">
+        <label for="name">Nama</label>
+        <input id="name" type="text"
+               class="rounded-md border border-gray-400 bg-transparent p-3 outline-none transition focus:ring-2 focus:ring-blue-500" />
+
+        <label for="email">Email</label>
+        <input id="email" type="email"
+               class="rounded-md border border-gray-400 bg-transparent p-3 outline-none transition focus:ring-2 focus:ring-blue-500" />
+
+        <label for="message">Pesan</label>
+        <textarea id="message" rows="5"
+                  class="rounded-md border border-gray-400 bg-transparent p-3 outline-none transition focus:ring-2 focus:ring-blue-500"></textarea>
+
+        <button type="submit"
+                class="mt-2 rounded-md bg-blue-600 p-3 font-semibold text-white transition hover:bg-blue-700 active:scale-95">
+          Kirim
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    const root = document.documentElement;
+    const menu = document.getElementById("menu");
+
+    // Dark mode: ingat pilihan user, kalau belum ada ikuti tema sistem
+    if (localStorage.theme === "dark" ||
+        (!("theme" in localStorage) && matchMedia("(prefers-color-scheme: dark)").matches)) {
+      root.classList.add("dark");
+    }
+
+    document.getElementById("theme-btn").addEventListener("click", () => {
+      root.classList.toggle("dark");
+      localStorage.theme = root.classList.contains("dark") ? "dark" : "light";
+    });
+
+    // Hamburger menu (mobile)
+    document.getElementById("menu-btn").addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+      menu.classList.toggle("flex");
+    });
+
+    // Tutup menu setelah klik link
+    menu.querySelectorAll("a").forEach((a) =>
+      a.addEventListener("click", () => {
+        menu.classList.add("hidden");
+        menu.classList.remove("flex");
+      })
+    );
+
+    // Muncul saat masuk layar, hilang lagi saat keluar (jadi animasi ulang kalau scroll naik/turun)
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e) => e.target.classList.toggle("show", e.isIntersecting));
+}, { threshold: 0.15 });
+document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+// Progress bar + tombol back-to-top
+const bar = document.getElementById("progress");
+const toTop = document.getElementById("to-top");
+
+addEventListener("scroll", () => {
+  const max = document.documentElement.scrollHeight - innerHeight;
+  bar.style.width = (scrollY / max) * 100 + "%";
+
+  const visible = scrollY > 400;
+  toTop.classList.toggle("opacity-0", !visible);
+  toTop.classList.toggle("translate-y-4", !visible);
+  toTop.classList.toggle("pointer-events-none", !visible);
+}, { passive: true });
+
+toTop.addEventListener("click", () => scrollTo({ top: 0, behavior: "smooth" }));
+
+// Link navbar menyala sesuai section yang sedang dilihat
+const links = document.querySelectorAll("#menu a");
+const spy = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (e.isIntersecting) {
+      links.forEach((a) => {
+        const active = a.getAttribute("href") === "#" + e.target.id;
+        a.classList.toggle("text-blue-600", active);
+        a.classList.toggle("dark:text-blue-400", active);
+        a.classList.toggle("font-semibold", active);
+      });
+    }
+  });
+}, { rootMargin: "-40% 0px -55% 0px" });
+document.querySelectorAll("section[id]").forEach((s) => spy.observe(s));
+  </script>
+</body>
+</html>
